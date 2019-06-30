@@ -1,7 +1,7 @@
 #include "loginwin.h"
 #include "ui_loginwin.h"
 #include "mainwindow.h"
-#include "registerwin.h"
+
 loginwin::loginwin(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::loginwin)
@@ -14,10 +14,10 @@ loginwin::~loginwin()
     delete ui;
 }
 
-void loginwin::on_pushButton_clicked()
+void loginwin::on_loginButton_clicked()
 {
-    QString ID = ui->id->text();
-    QString Pass = ui->pass->text();
+    QString ID = ui->username->text();
+    QString Pass = ui->password->text();
     if(ID=="RECOMOVIES" && Pass == "RECOMOVIES" ){
            hide();
            adminwin = new AdminWin(this);
@@ -32,7 +32,7 @@ void loginwin::on_pushButton_clicked()
 
         //creating database queries
       QSqlQuery query;
-      query.prepare(QString("SELECT * FROM user WHERE firstname = :username AND pass = :password"));
+      query.prepare(QString("SELECT * FROM user WHERE username = :username AND pass = :password"));
       query.bindValue(":username",ID);
       query.bindValue(":password",Pass);
             if(!query.exec()){
@@ -43,7 +43,7 @@ void loginwin::on_pushButton_clicked()
             else {
                      while (query.next()) {
                          QString usernamefromDB = query.value(1).toString();
-                         QString passwordfromDB = query.value(4).toString();
+                         QString passwordfromDB = query.value(6).toString();
                              if(usernamefromDB == ID && passwordfromDB == Pass){
                                  QMessageBox::information(this,"Success","Login success");
                                  hide();
@@ -52,7 +52,7 @@ void loginwin::on_pushButton_clicked()
                               }
                      }
              }
-
+    db.close();
     }
     else {
              QMessageBox::information(this,"db connection","login insertion failed");
@@ -68,4 +68,14 @@ void loginwin::on_pushButton_clicked()
 //                clientwin = new ClientWin(this);
 //                clientwin->show();
 //}
+}
+
+
+
+
+void loginwin::on_signupButton_clicked()
+{
+      hide();
+      regWin = new regwin(this);
+      regWin->centralWidget()->show();
 }

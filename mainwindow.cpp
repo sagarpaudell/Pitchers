@@ -6,8 +6,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("U:/test1/logoimg.PNG");
-    ui->logo_pic->setPixmap(pix.scaled(150,150,Qt::KeepAspectRatio));
 
 }
 MainWindow::~MainWindow()
@@ -24,9 +22,16 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    hide();
-    registerWin=new Registerwin(this);
-    registerWin->show();
+     hide();
+     regWin = new regwin(this);
+     regWin->setFixedSize(763,424);
+     regWin->show();
+
+
+
+//    registerWin=new Registerwin(this);
+//    registerWin->setFixedSize(763,424);
+//    registerWin->show();
 }
 
 void MainWindow::on_pushButton_clicked()

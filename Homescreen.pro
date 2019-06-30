@@ -30,21 +30,24 @@ SOURCES += \
         loginwin.cpp \
         main.cpp \
         mainwindow.cpp \
-        registerwin.cpp
+        movie_details.cpp \
+        regwin.cpp
 
 HEADERS += \
         adminwin.h \
         clientwin.h \
         loginwin.h \
         mainwindow.h \
-        registerwin.h
+        movie_details.h \
+        regwin.h
 
 FORMS += \
         adminwin.ui \
         clientwin.ui \
         loginwin.ui \
         mainwindow.ui \
-        registerwin.ui
+        movie_details.ui \
+        regwin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -53,3 +56,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     img.qrc
+
+DISTFILES += \
+    image/maxresdefault.png

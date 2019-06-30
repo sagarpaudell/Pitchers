@@ -22,9 +22,7 @@ void Registerwin::on_pushButton_2_clicked()
     mainWindow->setFixedSize(763,424);
     mainWindow->show();
 }
-bool isEmpty(QString string){
-    if(string == "" || string ==" "|| string =="  ")return true;
-            else return false;
+
 }
 void Registerwin::on_pushButton_clicked()
 {

@@ -2,12 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "registerwin.h"
 #include "loginwin.h"
+#include  "regwin.h"
 #include <QtSql/QtSql>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 #include <QMessageBox>
+#include <QStackedWidget>
 namespace Ui {
 class MainWindow;
 }
@@ -29,8 +30,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Registerwin *registerWin;
     loginwin *loginWin;
+    regwin *regWin;
+
 
 };
 

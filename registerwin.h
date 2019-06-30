@@ -25,6 +25,7 @@ private slots:
 private:
     Ui::Registerwin *ui;
     MainWindow *mainWindow;
+
 };
 
 #endif // REGISTERWIN_H

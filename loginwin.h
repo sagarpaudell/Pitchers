@@ -2,6 +2,8 @@
 #define LOGINWIN_H
 
 #include <QMainWindow>
+
+#include  "regwin.h"
 #include  "adminwin.h"
 #include  "clientwin.h"
 #include <QtSql/QtSql>
@@ -20,12 +22,19 @@ public:
     ~loginwin();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_loginButton_clicked();
+
+    void on_signupButton_clicked();
 
 private:
     Ui::loginwin *ui;
     AdminWin *adminwin;
     ClientWin *clientwin;
+    regwin *regWin;
+
+
+
 };
 
 #endif // LOGINWIN_H

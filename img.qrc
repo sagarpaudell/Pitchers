@@ -1,5 +1,37 @@
 <RCC>
     <qresource prefix="/">
-        <file>logoimg.PNG</file>
+        <file>img/backgroundfade.jpg</file>
+        <file>img/recologo1.png</file>
+        <file>image/gradientResize.jpg</file>
+        <file>image/image.png</file>
+        <file>image/Aladdin.jpg</file>
+        <file>image/Beauty and the Beast.jpg</file>
+        <file>image/Butch Cassidy and the Sundance Kid.jpg</file>
+        <file>image/Casablanca.jpg</file>
+        <file>image/Champion.jpg</file>
+        <file>image/City Lights.jpg</file>
+        <file>image/Deadwood- The Movie.jpg</file>
+        <file>image/Django Unchained.jpg</file>
+        <file>image/For a Few Dollars More.jpg</file>
+        <file>image/Forrest Gump.jpg</file>
+        <file>image/Gladiator.jpg</file>
+        <file>image/How the Grinch Stole Christmas!.jpg</file>
+        <file>image/It's a Wonderful Life.jpg</file>
+        <file>image/Life Is Beautiful.jpg</file>
+        <file>image/maxresdefault.png</file>
+        <file>image/Miss Saigon 25th Anniversary.jpg</file>
+        <file>image/Modern Times.jpg</file>
+        <file>image/Once Upon a Time in the West.jpg</file>
+        <file>image/Rudolph the Red-Nosed Reindeer.jpg</file>
+        <file>image/Sholay.jpg</file>
+        <file>image/Singin' in the Rain.jpg</file>
+        <file>image/The Gold Rush.jpg</file>
+        <file>image/The Good, the Bad and the Ugly.jpg</file>
+        <file>image/The Lion King.jpg</file>
+        <file>image/The Man Who Shot Liberty Valance.jpg</file>
+        <file>image/The Phantom of the Opera at the Royal Albert Hall.jpg</file>
+        <file>image/The Red Shoes.jpg</file>
+        <file>image/The Treasure of the Sierra Madre.jpg</file>
+        <file>image/Unforgiven.jpg</file>
     </qresource>
 </RCC>
