@@ -27,7 +27,7 @@
      <string notr="true">background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>7</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="Home_page_2">
      <widget class="QPushButton" name="pushButton_22">

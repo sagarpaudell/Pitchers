@@ -137,8 +137,10 @@ void regwin::on_loginButton_clicked()
                                  clientwin->show();
                               }
                      }
-             }
 
+            }
+
+    db.close();
     }
     else {
              QMessageBox::information(this,"db connection","login insertion failed");

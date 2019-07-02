@@ -17,23 +17,21 @@ Movie_Details::Movie_Details(QWidget *parent) :
 
         //creating database queries
       QSqlQuery query;
-      query.prepare(QString("SELECT * FROM romance WHERE moviename = :movietitle"));
-      query.bindValue(":moviename","Casablanca");
+      query.prepare(QString("SELECT * FROM horror WHERE moviename = :movietitle"));
+      query.bindValue(":moviename","Wilding");
 
-      if(!query.exec()){
-
-                 QMessageBox::information(this,"Failed","query failed to execute");
-
-            }
-            else {  qDebug() << query.value(3);
+      if(query.exec()){
+              qDebug() <<query.value(2);
                      while (query.next()) {
-                         ui->synopsis->setText(query.value(3).toString());
-
+                         ui->label->setText(query.value(2).toString());
                      }
-            }
+       }
+      else{
+               qDebug() << query.lastError().text();
+      }
+     db.close();
     }
 }
-
 Movie_Details::~Movie_Details()
 {
     delete ui;

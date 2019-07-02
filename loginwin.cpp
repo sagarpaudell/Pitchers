@@ -7,6 +7,7 @@ loginwin::loginwin(QWidget *parent) :
     ui(new Ui::loginwin)
 {
     ui->setupUi(this);
+
 }
 
 loginwin::~loginwin()
@@ -51,6 +52,7 @@ void loginwin::on_loginButton_clicked()
                                  clientwin->show();
                               }
                      }
+
              }
     db.close();
     }

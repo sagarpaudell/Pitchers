@@ -6,28 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>7633</width>
-    <height>600</height>
+    <width>763</width>
+    <height>424</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="synopsis">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>310</x>
       <y>50</y>
-      <width>661</width>
-      <height>171</height>
+      <width>201</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(85, 255, 255);</string>
+     <string notr="true">color: rgb(0, 85, 255);</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>80</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>name</string>
     </property>
    </widget>
   </widget>
@@ -36,7 +52,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>7633</width>
+     <width>763</width>
      <height>21</height>
     </rect>
    </property>

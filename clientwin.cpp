@@ -7,7 +7,7 @@ ClientWin::ClientWin(QWidget *parent) :
     ui(new Ui::ClientWin)
 {
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentIndex(0);
+    //ui->stackedWidget->setCurrentIndex(0);
 }
 
 ClientWin::~ClientWin()
