@@ -7,1350 +7,16 @@
     <x>0</x>
     <y>0</y>
     <width>787</width>
-    <height>540</height>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>50</y>
-      <width>791</width>
-      <height>461</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="currentIndex">
-     <number>6</number>
-    </property>
-    <widget class="QWidget" name="Home_page_2">
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/Casablanca.jpg);
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/City Lights.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_24">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>220</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/recommended/image/Life Is Beautiful.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_25">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>220</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/The Phantom of the Opera at the Royal Albert Hall.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="djangounchained">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/Django Unchained.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_27">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>220</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/The Treasure of the Sierra Madre.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_28">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/Forrest Gump.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_29">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/Gladiator.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_30">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>220</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/The Good, the Bad and the Ugly.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_31">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>220</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/recommended/image/Sholay.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="MostRated_page_3">
-     <widget class="QPushButton" name="pushButton_32">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_33">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_34">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_35">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_36">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_37">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_38">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_39">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="thegoodthebadtheugly">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-background-image: url(:/image/The Good, the Bad and the Ugly.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_41">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="Action_page_4">
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>0</y>
-        <width>211</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#ffff00;&quot;&gt;Action Mania&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QStackedWidget" name="stackedWidget_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1141</width>
-        <height>711</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 0, 0);</string>
-      </property>
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <widget class="QWidget" name="Home_page_4">
-       <widget class="QPushButton" name="pushButton_104">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_105">
-        <property name="geometry">
-         <rect>
-          <x>170</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_106">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>220</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_107">
-        <property name="geometry">
-         <rect>
-          <x>170</x>
-          <y>220</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_108">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_109">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>220</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_110">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_111">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_112">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>220</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_113">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>220</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>40</x>
-          <y>200</y>
-          <width>81</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 0, 255);</string>
-        </property>
-        <property name="text">
-         <string>Interstellar</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="MostRated_page_5">
-       <widget class="QPushButton" name="pushButton_114">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>230</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_115">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>230</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_116">
-        <property name="geometry">
-         <rect>
-          <x>610</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_117">
-        <property name="geometry">
-         <rect>
-          <x>610</x>
-          <y>230</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_118">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_119">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_120">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_121">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>230</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_122">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>10</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-image: url(:/image/Gladiator.jpg);
-background-color: rgb(85, 85, 0);</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_123">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>230</y>
-          <width>131</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="Action_page_6">
-       <widget class="QLabel" name="label_8">
-        <property name="geometry">
-         <rect>
-          <x>260</x>
-          <y>0</y>
-          <width>211</width>
-          <height>151</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#ffff00;&quot;&gt;Action Mania&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="adventure_page_5">
-     <widget class="QPushButton" name="pushButton_124">
-      <property name="geometry">
-       <rect>
-        <x>820</x>
-        <y>370</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_125">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_126">
-      <property name="geometry">
-       <rect>
-        <x>820</x>
-        <y>150</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_127">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_128">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_129">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_130">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_131">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_132">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(85, 255, 127);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_133">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_134">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_135">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="crime_page_6">
-     <widget class="QPushButton" name="pushButton_136">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_137">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_138">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_139">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_140">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_141">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_142">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_143">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_144">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_145">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="drama_page_7">
-     <widget class="QPushButton" name="pushButton_146">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);
-hover{
-	background-color: rgb(85, 170, 0);}</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_147">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_148">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(255, 85, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_149">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_150">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_151">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_152">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_153">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_154">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_155">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="romance_page_8">
-     <widget class="QPushButton" name="casblanca">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/Casablanca.jpg);
-image: url(:/image/Casablanca.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_157">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/image/romance/Once Upon a Time in the West.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_158">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/romance/Modern Times.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_159">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image:url(:/image/romance/Champion.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_160">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/romance/The Phantom of the Opera at the Royal Albert Hall.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_161">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/image/romance/Champion.jpg);
-background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_162">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/romance/Forrest Gump.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_163">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>230</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgb(255, 255, 255);
-background-image: url(:/image/romance/Life Is Beautiful.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_164">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-background-color: rgb(255, 255, 255);
-background-image: url(:/image/romance/Gladiator.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_165">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>10</y>
-        <width>131</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-background-image: url(:/image/romance/City Lights.jpg);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page"/>
-   </widget>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="clientwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
@@ -1361,22 +27,6 @@ background-image: url(:/image/romance/City Lights.jpg);</string>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2"/>
-   </widget>
-   <widget class="QPushButton" name="action">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>490</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Action</string>
-    </property>
    </widget>
    <widget class="QGraphicsView" name="topgraphicsView">
     <property name="geometry">
@@ -1419,19 +69,6 @@ background-color: rgb(85, 0, 0);
      <string>Most Rated</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="adventure">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>20</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Adventure</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="crime">
     <property name="geometry">
      <rect>
@@ -1448,7 +85,7 @@ background-color: rgb(85, 0, 0);
    <widget class="QPushButton" name="drama">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>190</x>
       <y>20</y>
       <width>75</width>
       <height>23</height>
@@ -1461,7 +98,7 @@ background-color: rgb(85, 0, 0);
    <widget class="QPushButton" name="romance">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>370</x>
       <y>20</y>
       <width>75</width>
       <height>23</height>
@@ -1471,16 +108,287 @@ background-color: rgb(85, 0, 0);
      <string>Romance</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>787</width>
-     <height>21</height>
-    </rect>
-   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>50</y>
+      <width>781</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="currentIndex">
+     <number>7</number>
+    </property>
+    <widget class="QWidget" name="home_page_0">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="mostrated_page_1"/>
+    <widget class="QWidget" name="drama_page_2"/>
+    <widget class="QWidget" name="crime_page_3"/>
+    <widget class="QWidget" name="romance_page_4"/>
+    <widget class="QWidget" name="documentary_page_5"/>
+    <widget class="QWidget" name="search_page_6"/>
+    <widget class="QWidget" name="moviedetails_page_7">
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgb(255, 255, 255);
+</string>
+     </property>
+     <widget class="QTextBrowser" name="genre">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>80</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="movietitle">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>0</y>
+        <width>341</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 24pt &quot;Century Gothic&quot;;
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="year">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>70</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>180</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Cast :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="IMDb">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>100</y>
+        <width>51</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="movie_poster">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="director">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>130</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>130</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Director :</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="cast">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>170</y>
+        <width>471</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>80</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Genre</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="synopsis">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>300</y>
+        <width>701</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="IMDblabel">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>90</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/imdblogo.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Synopsis:</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="documentary">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>20</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Documentary</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="search">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>20</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>search by movie title</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>10</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(85, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QStackedWidget>
 #include "movie_details.h"
+#include  <QCompleter>
+
 namespace Ui {
 class ClientWin;
 }
@@ -17,30 +19,31 @@ public:
     ~ClientWin();
 
 private slots:
+    void display_movie_details(const QString temp);
 
+    void setmostratedMovies();
+    void setdramaMovies();
+    void setcrimeMovies();
+    void setromanceMovies();
+    void setdocumentaryMovies();
     void on_home_clicked();
 
     void on_mostrated_clicked();
 
-    void on_action_clicked();
-
-    void on_adventure_clicked();
+    void on_drama_clicked();
 
     void on_crime_clicked();
 
-    void on_drama_clicked();
-
     void on_romance_clicked();
 
-    void on_pushButton_40_clicked();
+    void on_documentary_clicked();
 
-    void on_djangounchained_clicked();
-
-    void on_casblanca_clicked();
+    void on_commandLinkButton_clicked();
 
 private:
     Ui::ClientWin *ui;
     Movie_Details *movie_details;
+    QCompleter *moviename_completer;
 };
 
 #endif // CLIENTWIN_H

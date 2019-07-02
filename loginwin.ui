@@ -19,7 +19,7 @@
   <property name="styleSheet">
    <string notr="true">
 
-*{
+#centralwidget{
 	
 background-image: url(:/img/backgroundfade.jpg);
 	font-family: century gothic;

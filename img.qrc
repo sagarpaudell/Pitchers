@@ -33,5 +33,7 @@
         <file>image/The Red Shoes.jpg</file>
         <file>image/The Treasure of the Sierra Madre.jpg</file>
         <file>image/Unforgiven.jpg</file>
+        <file>img/imdblogo.png</file>
+        <file>img/comingsoon.png</file>
     </qresource>
 </RCC>

@@ -31,6 +31,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         movie_details.cpp \
+        movie_manager.cpp \
         regwin.cpp
 
 HEADERS += \
@@ -39,6 +40,7 @@ HEADERS += \
         loginwin.h \
         mainwindow.h \
         movie_details.h \
+        movie_manager.h \
         regwin.h
 
 FORMS += \

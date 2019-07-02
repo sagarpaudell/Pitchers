@@ -16,9 +16,9 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="centralWidget">
+  <widget class="QWidget" name="mainwidget">
    <property name="styleSheet">
-    <string notr="true">#centralWidget{
+    <string notr="true">#mainwidget{
 background-image: url(:/img/backgroundfade.jpg);}</string>
    </property>
    <widget class="QPushButton" name="pushButton">
