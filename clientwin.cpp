@@ -78,7 +78,7 @@ void ClientWin :: setmostratedMovies() {
     qDebug()<<"Lenght: "<<data.length();
     QGridLayout *layout = new QGridLayout;
 
-    int index = 0;
+    int index = data.length()-  1;
     for (int i = 0; i < 5; ++i) {
         for (int k = 0; k < 2; ++k){
             QPushButton *button = new QPushButton();
@@ -114,7 +114,7 @@ void ClientWin :: setmostratedMovies() {
             vbox->addWidget(button);
             layout->addLayout(vbox,k,i);
             ui->mostrated_page_1->setLayout(layout);
-            index++;
+            index--;
         }
     }
 
@@ -127,7 +127,7 @@ void ClientWin :: setcrimeMovies() {
     qDebug()<<"Lenght: "<<data.length();
     QGridLayout *layout = new QGridLayout;
 
-    int index = 0;
+    int index = data.length()-  1;
     for (int i = 0; i < 5; ++i) {
         for (int k = 0; k < 2; ++k){
             QPushButton *button = new QPushButton();
@@ -165,7 +165,7 @@ void ClientWin :: setcrimeMovies() {
             vbox->addWidget(button);
             layout->addLayout(vbox,k,i);
             ui->crime_page_3->setLayout(layout);
-            index++;
+            index--;
         }
     }
 
@@ -178,7 +178,7 @@ void ClientWin :: setdramaMovies() {
     qDebug()<<"Lenght: "<<data.length();
     QGridLayout *layout = new QGridLayout;
 
-    int index = 0;
+    int index = data.length()-  1;
     for (int i = 0; i < 5; ++i) {
         for (int k = 0; k < 2; ++k){
             QPushButton *button = new QPushButton();
@@ -218,7 +218,7 @@ void ClientWin :: setdramaMovies() {
             vbox->addWidget(button);
             layout->addLayout(vbox,k,i);
             ui->drama_page_2->setLayout(layout);
-            index++;
+            index--;
         }
     }
 
@@ -231,7 +231,7 @@ void ClientWin :: setromanceMovies() {
     qDebug()<<"Lenght: "<<data.length();
     QGridLayout *layout = new QGridLayout;
 
-    int index = 0;
+    int index = data.length()-  1;
     for (int i = 0; i < 5; ++i) {
         for (int k = 0; k < 2; ++k){
             QPushButton *button = new QPushButton();
@@ -278,7 +278,7 @@ void ClientWin :: setromanceMovies() {
             vbox->addWidget(button);
             layout->addLayout(vbox,k,i);
             ui->romance_page_4->setLayout(layout);
-            index++;
+            index--;
         }
     }
 
@@ -291,7 +291,7 @@ void ClientWin :: setdocumentaryMovies() {
     qDebug()<<"Lenght: "<<data.length();
     QGridLayout *layout = new QGridLayout;
 
-    int index = 0;
+    int index = data.length()-  1;
     for (int i = 0; i < 5; ++i) {
         for (int k = 0; k < 2; ++k){
             QPushButton *button = new QPushButton();
@@ -338,7 +338,7 @@ void ClientWin :: setdocumentaryMovies() {
             vbox->addWidget(button);
             layout->addLayout(vbox,k,i);
             ui->documentary_page_5->setLayout(layout);
-            index++;
+            index--;
         }
     }
 
