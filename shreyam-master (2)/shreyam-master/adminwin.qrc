@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>adminbackground.jpg</file>
+    </qresource>
+</RCC>

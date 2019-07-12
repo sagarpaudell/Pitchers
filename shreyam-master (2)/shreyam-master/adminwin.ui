@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWin</class>
+ <widget class="QMainWindow" name="AdminWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1263</width>
+    <height>692</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AdminWin</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+	background-image: url(:/adminbackground.jpg);
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>981</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QWidget" name="addMovie">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>921</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>919</width>
+         <height>569</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="title_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>50</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Title</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="year_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>90</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Year</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="director_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>130</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Director</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="imdb_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>170</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>IMDb</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="genre_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>210</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Genre</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="imdb">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>170</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="director">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>130</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="year">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>90</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="title">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>50</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="genre">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>210</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="cast">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>250</y>
+          <width>271</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cast_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>250</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Cast</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="add">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>520</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Add Now</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="image_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>470</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Image</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="image">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>470</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="synopsis_2">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>360</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Synopsis</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="synopsis">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>360</y>
+          <width>271</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:red;</string>
+        </property>
+        <property name="text">
+         <string>ADD MOVIES!</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="piclabel">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>150</y>
+          <width>191</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="browse">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>462</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Browse</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="clear">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>460</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Clear Selection</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="removeMovie">
+     <widget class="QScrollArea" name="scrollArea_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>851</width>
+        <height>551</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>849</width>
+         <height>549</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="title_3">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>200</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:white;
+</string>
+        </property>
+        <property name="text">
+         <string>Title</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="title_4">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>200</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>280</y>
+          <width>141</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+        </property>
+        <property name="text">
+         <string>Remove Now</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:red;</string>
+        </property>
+        <property name="text">
+         <string>REMOVE MOVIE!</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="usersList">
+     <widget class="QScrollArea" name="scrollArea_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>90</y>
+        <width>851</width>
+        <height>551</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>849</width>
+         <height>549</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:red;</string>
+        </property>
+        <property name="text">
+         <string>USER'S LIST:</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>90</y>
+          <width>611</width>
+          <height>261</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Add Movies</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Remove Movies</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>20</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Registered Users</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>20</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Log Out</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
