@@ -32,6 +32,8 @@ private slots:
 
     void on_backButton_clicked();
 
+    void on_birthdate_userDateChanged(const QDate &date);
+
 private:
     Ui::regwin *ui;
     loginwin *loginWin;

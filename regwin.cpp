@@ -11,6 +11,7 @@ regwin::regwin(QWidget *parent) :
     ui(new Ui::regwin)
 {
     ui->setupUi(this);
+
 }
 
 regwin::~regwin()
@@ -35,6 +36,7 @@ void regwin::on_joinButton_clicked()
     QString Password = ui->pass->text();
     QString Re_Password = ui->repass->text();
     QString username = ui->user_name->text();
+    QString nationality = ui->nationality->text();
     QString sex;
     if(ui->male->isCheckable()){
         sex="male";
@@ -66,8 +68,8 @@ void regwin::on_joinButton_clicked()
         //create queries here.
 //        run input queries
         QSqlQuery query;
-        query.prepare("INSERT INTO user(username,firstname,lastname,sex,email,pass,repass)"
-                     " VALUES(:username,:Fv_name,:L_name,:sex,:Email,:Password,:Re_Password)");
+        query.prepare("INSERT INTO user(username,firstname,lastname,sex,email,pass,repass,nationality)"
+                     " VALUES(:username,:Fv_name,:L_name,:sex,:Email,:Password,:Re_Password,:Nationality)");
         query.bindValue(":username",username);
         query.bindValue(":Fv_name",F_name);
         query.bindValue(":L_name",L_name);
@@ -75,6 +77,7 @@ void regwin::on_joinButton_clicked()
         query.bindValue(":Email",Email);
         query.bindValue(":Password",Password);
         query.bindValue(":Re_Password",Re_Password);
+        query.bindValue(":Nationality",nationality);
         if(query.exec()){
             QMessageBox::information(this,"db connection","values inserted");
         }
@@ -168,3 +171,8 @@ void regwin::on_backButton_clicked()
 }
 
 
+
+void regwin::on_birthdate_userDateChanged(const QDate &date)
+{
+
+}

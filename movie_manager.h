@@ -7,7 +7,7 @@
 class DbManager
 {
 public:
-
+    DbManager();
     DbManager(const QString& path);
 
     /**
@@ -17,11 +17,17 @@ public:
      */
     ~DbManager();
      QList<QList<QVariant>> getAllmostrated();
+     QList<QList<QVariant>> getAllnepali();
      QList<QList<QVariant>> getAlldrama();
+     QList<QList<QVariant>> getAllsouthindian();
+     QList<QList<QVariant>> getAllhindi();
      QList<QList<QVariant>> getAllcrime();
+     QList<QList<QVariant>> getAllhistory();
+     QList<QList<QVariant>> getAllaction();
      QList<QList<QVariant>> getAllromance();
      QList<QList<QVariant>> getAlldocumentary();
      QList<QVariant> getmovies(QString name);
+     QList<QString> getUserInfo(const QString& uname);
      QStringList getmoviesforsearch();
      QList<QVariant> display_search_details(const QString temp);
      bool isOpen() const;
@@ -89,6 +95,6 @@ public:
 private:
     QSqlDatabase db;
 };
-
-
+void getusernationality(QString nationality);
+QString give();
 #endif // DB_MANNAGER_H

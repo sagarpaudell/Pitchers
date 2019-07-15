@@ -4,6 +4,7 @@
 #include <QSqlRecord>
 #include <QDebug>
 #include <QPixmap>
+DbManager::DbManager(){}
 DbManager::DbManager(const QString &path)
 {
     db = QSqlDatabase::addDatabase("QMYSQL");
@@ -104,15 +105,15 @@ QList<QVariant> DbManager::getmovies(QString name){
     }
     return data;
 }
-QList<QList<QVariant>> DbManager::getAlldrama(){
-    QSqlQuery query("SELECT * FROM drama");
-    int movieNameIndex = query.record().indexOf("moviename");
-    int releaseDateIndex = query.record().indexOf("releassedate");
+QList<QList<QVariant>> DbManager::getAllromance(){
+    QSqlQuery query("SELECT * FROM romance");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
     int directorIndex = query.record().indexOf("director");
-    int IMDBIndex = query.record().indexOf("IMDb");
+    int IMDBIndex = query.record().indexOf("imdb");
     int castIndex = query.record().indexOf("cast");
     int synopsisIndex = query.record().indexOf("synopsis");
-    //int imageIndex = query.record().indexOf("image");
+    int imageIndex = query.record().indexOf("image");
 
     QList<QList<QVariant>> data;
     while (query.next()){
@@ -124,10 +125,46 @@ QList<QList<QVariant>> DbManager::getAlldrama(){
         QString IMDB = query.value(IMDBIndex).toString();
         QString cast = query.value(castIndex).toString();
         QString synopsis = query.value(synopsisIndex).toString();
-       // QPixmap image= QPixmap();
-        //image.loadFromData( query.value(imageIndex).toByteArray());
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
 
-        //list.push_front(image);
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+
+QList<QList<QVariant>> DbManager::getAlldrama(){
+    QSqlQuery query("SELECT * FROM drama");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
         list.push_front(synopsis);
         list.push_front(cast);
         list.push_front(IMDB);
@@ -143,13 +180,13 @@ QList<QList<QVariant>> DbManager::getAllcrime(){
 
     QSqlQuery query("SELECT * FROM crime ");
 
-    int movieNameIndex = query.record().indexOf("moviename");
-    int releaseDateIndex = query.record().indexOf("releassedate");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
     int directorIndex = query.record().indexOf("director");
-    int IMDBIndex = query.record().indexOf("IMDb");
+    int IMDBIndex = query.record().indexOf("imdb");
     int castIndex = query.record().indexOf("cast");
     int synopsisIndex = query.record().indexOf("synopsis");
-    //int imageIndex = query.record().indexOf("image");
+    int imageIndex = query.record().indexOf("image");
 
     QList<QList<QVariant>> data;
     while (query.next()){
@@ -161,47 +198,10 @@ QList<QList<QVariant>> DbManager::getAllcrime(){
         QString IMDB = query.value(IMDBIndex).toString();
         QString cast = query.value(castIndex).toString();
         QString synopsis = query.value(synopsisIndex).toString();
-       // QPixmap image= QPixmap();
-        //image.loadFromData( query.value(imageIndex).toByteArray());
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
 
-        //list.push_front(image);
-        list.push_front(synopsis);
-        list.push_front(cast);
-        list.push_front(IMDB);
-        list.push_front(director);
-        list.push_front(releaseDate);
-        list.push_front(movieName);
-
-        data.push_front(list);
-    }
-    return data;
-}
-QList<QList<QVariant>> DbManager::getAllromance(){
-
-    QSqlQuery query("SELECT * FROM romance ");
-
-    int movieNameIndex = query.record().indexOf("moviename");
-    int releaseDateIndex = query.record().indexOf("releassedate");
-    int directorIndex = query.record().indexOf("director");
-    int IMDBIndex = query.record().indexOf("IMDb");
-    int castIndex = query.record().indexOf("cast");
-    int synopsisIndex = query.record().indexOf("synopsis");
-    //int imageIndex = query.record().indexOf("image");
-
-    QList<QList<QVariant>> data;
-    while (query.next()){
-        QList<QVariant> list;
-
-        QString movieName = query.value(movieNameIndex).toString();
-        QString releaseDate = query.value(releaseDateIndex).toString();
-        QString director = query.value(directorIndex).toString();
-        QString IMDB = query.value(IMDBIndex).toString();
-        QString cast = query.value(castIndex).toString();
-        QString synopsis = query.value(synopsisIndex).toString();
-       // QPixmap image= QPixmap();
-        //image.loadFromData( query.value(imageIndex).toByteArray());
-
-        //list.push_front(image);
+        list.push_front(image);
         list.push_front(synopsis);
         list.push_front(cast);
         list.push_front(IMDB);
@@ -217,13 +217,13 @@ QList<QList<QVariant>> DbManager::getAlldocumentary(){
 
     QSqlQuery query("SELECT * FROM documentary ");
 
-    int movieNameIndex = query.record().indexOf("moviename");
-    int releaseDateIndex = query.record().indexOf("releassedate");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
     int directorIndex = query.record().indexOf("director");
-    int IMDBIndex = query.record().indexOf("IMDb");
+    int IMDBIndex = query.record().indexOf("imdb");
     int castIndex = query.record().indexOf("cast");
     int synopsisIndex = query.record().indexOf("synopsis");
-    //int imageIndex = query.record().indexOf("image");
+    int imageIndex = query.record().indexOf("image");
 
     QList<QList<QVariant>> data;
     while (query.next()){
@@ -235,10 +235,10 @@ QList<QList<QVariant>> DbManager::getAlldocumentary(){
         QString IMDB = query.value(IMDBIndex).toString();
         QString cast = query.value(castIndex).toString();
         QString synopsis = query.value(synopsisIndex).toString();
-       // QPixmap image= QPixmap();
-        //image.loadFromData( query.value(imageIndex).toByteArray());
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
 
-        //list.push_front(image);
+        list.push_front(image);
         list.push_front(synopsis);
         list.push_front(cast);
         list.push_front(IMDB);
@@ -326,3 +326,231 @@ QStringList DbManager::getmoviesforsearch(){
 
 //}
 
+QList<QList<QVariant>> DbManager::getAllnepali(){
+    QSqlQuery query("SELECT * FROM nepali");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+QList<QList<QVariant>> DbManager::getAllaction(){
+    QSqlQuery query("SELECT * FROM action");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+QList<QList<QVariant>> DbManager::getAllhistory(){
+    QSqlQuery query("SELECT * FROM history");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+QList<QList<QVariant>> DbManager::getAllhindi(){
+    QSqlQuery query("SELECT * FROM hindi");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+QList<QList<QVariant>> DbManager::getAllsouthindian(){
+    QSqlQuery query("SELECT * FROM southindian");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+QString give(){
+
+}
+void getusernationality(QString t){
+    DbManager db("registration");
+    QSqlQuery query("SELECT * FROM user WHERE username = :t");
+    query.bindValue("t",t);
+    int nationalityIndex = query.record().indexOf("nationality");
+    QString nationality = query.value(nationalityIndex).toString();
+
+}
+QList<QString> DbManager::getUserInfo(const QString& uname) {
+    QList<QString> userList;
+
+    qDebug() << "users in db:";
+    QSqlQuery query;
+    query.prepare("SELECT * FROM user WHERE username = (:uname)");
+    query.bindValue(":uname", uname);
+
+    if(!query.exec()){
+        qDebug()<<"Query err"<<query.lastError();
+    }else{
+        //Query was sucessful :)
+        int email_id = query.record().indexOf("email");
+        int fname_id = query.record().indexOf("firstname");
+        int lname_id = query.record().indexOf("lastname");
+        int sex_id = query.record().indexOf("sex");
+        int pass_id = query.record().indexOf("pass");
+        int nationality_id = query.record().indexOf("nationality");
+        int age_id = query.record().indexOf("age");
+
+        if(query.next()){
+            QString email = query.value(email_id).toString();
+            QString fname = query.value(fname_id).toString();
+            QString lname = query.value(lname_id).toString();
+            QString pass = query.value(pass_id).toString();
+            QString nationality = query.value(nationality_id).toString();
+            QString sex = query.value(sex_id).toString();
+            QString age = query.value(age_id).toString();
+
+            userList.push_front(age);
+            userList.push_front(nationality);
+            userList.push_front(sex);
+            userList.push_front(pass);
+            userList.push_front(email);
+            userList.push_front(lname);
+            userList.push_front(fname);
+
+        }
+    }
+
+    return  userList;
+}

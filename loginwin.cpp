@@ -1,13 +1,14 @@
 #include "loginwin.h"
 #include "ui_loginwin.h"
 #include "mainwindow.h"
-
+#include "movie_manager.h"
+extern QString ID;
 loginwin::loginwin(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::loginwin)
 {
     ui->setupUi(this);
-
+    connect(ui->password, SIGNAL(returnPressed()),ui->loginButton,SIGNAL(clicked()));
 }
 
 loginwin::~loginwin()
@@ -46,9 +47,11 @@ void loginwin::on_loginButton_clicked()
                          QString usernamefromDB = query.value(1).toString();
                          QString passwordfromDB = query.value(6).toString();
                              if(usernamefromDB == ID && passwordfromDB == Pass){
+
+
                                  QMessageBox::information(this,"Success","Login success");
                                  hide();
-                                 clientwin = new ClientWin(this);
+                                 clientwin = new ClientWin(this,ID);
                                  clientwin->show();
                               }
                      }

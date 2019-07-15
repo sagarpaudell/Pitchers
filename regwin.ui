@@ -177,31 +177,13 @@ background:rgb(85, 0, 0)
         <string>Back</string>
        </property>
       </widget>
-      <widget class="QGraphicsView" name="graphicsView">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>20</y>
-         <width>321</width>
-         <height>371</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">#graphicsView{
-	background: rgb(255, 255, 255);
-	border-top-left-radius:100% 50%;
-	border-bottom-left-radius:100% 50%;
-	padding: 50px;
-}</string>
-       </property>
-      </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>120</y>
+         <x>140</x>
+         <y>100</y>
          <width>281</width>
-         <height>151</height>
+         <height>171</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -286,15 +268,22 @@ background:rgb(85, 0, 0)
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QLineEdit" name="nationality">
+          <property name="placeholderText">
+           <string> Nationality</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="layoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>70</y>
+         <x>140</x>
+         <y>50</y>
          <width>281</width>
-         <height>41</height>
+         <height>61</height>
         </rect>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -330,8 +319,8 @@ background:rgb(85, 0, 0)
       <widget class="QLabel" name="alreadyhaveanaccount_3">
        <property name="geometry">
         <rect>
-         <x>260</x>
-         <y>30</y>
+         <x>250</x>
+         <y>10</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -410,7 +399,7 @@ background:rgb(85, 0, 0)
        <property name="geometry">
         <rect>
          <x>200</x>
-         <y>260</y>
+         <y>280</y>
          <width>91</width>
          <height>50</height>
         </rect>
@@ -428,7 +417,7 @@ background:rgb(85, 0, 0)
        <property name="geometry">
         <rect>
          <x>280</x>
-         <y>260</y>
+         <y>280</y>
          <width>141</width>
          <height>50</height>
         </rect>
@@ -446,7 +435,7 @@ background:rgb(85, 0, 0)
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>270</y>
+         <y>290</y>
          <width>71</width>
          <height>31</height>
         </rect>
@@ -503,6 +492,24 @@ background:rgb(85, 0, 0)
       </property>
       <property name="text">
        <string>Sign in</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>321</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#graphicsView{
+	background: rgb(255, 255, 255);
+	border-top-left-radius:100% 50%;
+	border-bottom-left-radius:100% 50%;
+	padding: 50px;
+}</string>
       </property>
      </widget>
     </widget>
