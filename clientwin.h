@@ -21,6 +21,8 @@ public:
 
 private slots:
     void display_movie_details(const QString temp);
+    void trailer(const QString tlink);
+    void movie(const QString mlink);
     void setrecommendedMovies(const QString uname);
     void setmostratedMovies();
     void setdramaMovies();
@@ -41,6 +43,10 @@ private slots:
     void on_documentary_clicked();
 
     void on_commandLinkButton_clicked();
+
+    void on_trailer_button_clicked(const QString tlink);
+
+    void on_movie_button_clicked(const QString mlink);
 
 private:
     Ui::ClientWin *ui;

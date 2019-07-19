@@ -80,7 +80,9 @@ void loginwin::on_loginButton_clicked()
 
 void loginwin::on_signupButton_clicked()
 {
-      hide();
-      regWin = new regwin(this);
-      regWin->centralWidget()->show();
+    close();
+    regWin = new regwin(this);
+    regWin->show();
+
+
 }

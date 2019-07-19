@@ -18,6 +18,7 @@ public:
     ~DbManager();
      QList<QList<QVariant>> getAllmostrated();
      QList<QList<QVariant>> getAllnepali();
+     QList<QList<QVariant>> getAllanimated();
      QList<QList<QVariant>> getAlldrama();
      QList<QList<QVariant>> getAllsouthindian();
      QList<QList<QVariant>> getAllhindi();
@@ -31,7 +32,10 @@ public:
      QStringList getmoviesforsearch();
      QList<QVariant> display_search_details(const QString temp);
      bool isOpen() const;
-
+     bool doesmovieExits(const QString& movieName)const;
+     bool removemovie(const QString &movieName)const;
+     bool doesuserExits(const QString& userName)const;
+     bool removeuser(const QString& userName)const;
     /**
      * @brief Creates a new 'user' table if it doesn't already exist
      * @return true - 'user' table created successfully, false - table not created

@@ -251,7 +251,7 @@ QList<QList<QVariant>> DbManager::getAlldocumentary(){
     return data;
 }
 QStringList DbManager::getmoviesforsearch(){
-    QSqlQuery query("SELECT title FROM imdb");
+    QSqlQuery query("SELECT title FROM imdb union (SELECT title FROM nepali )union(SELECT title FROM hindi)union (SELECT title FROM kids )union (SELECT title FROM southindian )");
     int movieNameIndex = query.record().indexOf("title");
     QStringList list;
     while (query.next()){
@@ -553,4 +553,97 @@ QList<QString> DbManager::getUserInfo(const QString& uname) {
     }
 
     return  userList;
+}
+QList<QList<QVariant>> DbManager::getAllanimated(){
+    QSqlQuery query("SELECT * FROM kids");
+    int movieNameIndex = query.record().indexOf("title");
+    int releaseDateIndex = query.record().indexOf("year");
+    int directorIndex = query.record().indexOf("director");
+    int IMDBIndex = query.record().indexOf("imdb");
+    int castIndex = query.record().indexOf("cast");
+    int synopsisIndex = query.record().indexOf("synopsis");
+    int imageIndex = query.record().indexOf("image");
+
+    QList<QList<QVariant>> data;
+    while (query.next()){
+        QList<QVariant> list;
+
+        QString movieName = query.value(movieNameIndex).toString();
+        QString releaseDate = query.value(releaseDateIndex).toString();
+        QString director = query.value(directorIndex).toString();
+        QString IMDB = query.value(IMDBIndex).toString();
+        QString cast = query.value(castIndex).toString();
+        QString synopsis = query.value(synopsisIndex).toString();
+        QPixmap image= QPixmap();
+        image.loadFromData( query.value(imageIndex).toByteArray());
+
+        list.push_front(image);
+        list.push_front(synopsis);
+        list.push_front(cast);
+        list.push_front(IMDB);
+        list.push_front(director);
+        list.push_front(releaseDate);
+        list.push_front(movieName);
+
+        data.push_front(list);
+    }
+    return data;
+}
+bool DbManager::doesmovieExits(const QString &movieName) const{
+    QSqlQuery checkQuery;
+    checkQuery.prepare("SELECT title FROM imdb WHERE title = (:movieName)");
+    checkQuery.bindValue(":movieName",movieName);
+    if(checkQuery.exec()){
+        if(checkQuery.next()){
+            return true;
+        }
+    }else{
+        qDebug()<<"does movie exist query failed "<<checkQuery.lastError();
+    }
+    return false;
+}
+bool DbManager::removemovie(const QString &movieName) const{
+    bool success = false;
+
+    if (doesmovieExits(movieName)){
+        QSqlQuery queryDelete;
+        queryDelete.prepare("DELETE FROM imdb WHERE title = (:movieName)");
+        queryDelete.bindValue(":movieName", movieName);
+        success = queryDelete.exec();
+        if(!success){
+            qDebug() << "remove  failed: " << queryDelete.lastError();
+        }
+    }else{
+        qDebug() << "remove movies failed: item doesnt exist";
+    }
+    return success;
+}
+bool DbManager::doesuserExits(const QString &userName) const{
+    QSqlQuery checkQuery;
+    checkQuery.prepare("SELECT username FROM user WHERE username = (:userName)");
+    checkQuery.bindValue(":userName",userName);
+    if(checkQuery.exec()){
+        if(checkQuery.next()){
+            return true;
+        }
+    }else{
+        qDebug()<<"does user exist query failed "<<checkQuery.lastError();
+    }
+    return false;
+}
+bool DbManager::removeuser(const QString &userName) const{
+    bool success = false;
+
+    if (doesmovieExits(userName)){
+        QSqlQuery queryDelete;
+        queryDelete.prepare("DELETE FROM user WHERE username = (:userName)");
+        queryDelete.bindValue(":userName", userName);
+        success = queryDelete.exec();
+        if(!success){
+            qDebug() << "remove  failed: " << queryDelete.lastError();
+        }
+    }else{
+        qDebug() << "remove user failed: user doesnt exist";
+    }
+    return success;
 }

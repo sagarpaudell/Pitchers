@@ -121,7 +121,7 @@ background-color: rgb(85, 0, 0);
      <string notr="true">background-color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>7</number>
     </property>
     <widget class="QWidget" name="home_page_0">
      <property name="styleSheet">
@@ -253,7 +253,7 @@ background-color: rgb(255, 255, 255);
        <rect>
         <x>170</x>
         <y>0</y>
-        <width>341</width>
+        <width>531</width>
         <height>61</height>
        </rect>
       </property>
@@ -298,22 +298,6 @@ font: 10pt &quot;Century Gothic&quot;;</string>
        <string>Cast :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="IMDb">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>100</y>
-        <width>51</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="movie_poster">
       <property name="geometry">
        <rect>
@@ -341,7 +325,8 @@ font: 10pt &quot;Century Gothic&quot;;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Century Gothic&quot;;</string>
+       <string notr="true">border-style: none;
+</string>
       </property>
       <property name="text">
        <string/>
@@ -380,8 +365,8 @@ font: 10pt &quot;Century Gothic&quot;;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>80</y>
+        <x>440</x>
+        <y>70</y>
         <width>47</width>
         <height>13</height>
        </rect>
@@ -438,6 +423,87 @@ font: 10pt &quot;Century Gothic&quot;;</string>
       </property>
       <property name="text">
        <string>Synopsis:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="IMDb">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>92</y>
+        <width>47</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="trailer_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>210</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cambria</family>
+        <pointsize>8</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;Cambria&quot;;
+	color: rgb(0, 85, 255);
+padding-left:10px;
+padding-right:10px;
+border-radius:10px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Watch Trailer</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="movie_button">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>240</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cambria</family>
+        <pointsize>8</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 8pt &quot;Cambria&quot;;
+	color: rgb(0, 85, 255);
+padding-left:10px;
+padding-right:10px;
+border-radius:10px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Watch Movie</string>
       </property>
      </widget>
     </widget>

@@ -35,5 +35,6 @@
         <file>image/Unforgiven.jpg</file>
         <file>img/imdblogo.png</file>
         <file>img/comingsoon.png</file>
+        <file>img/adminbackground.jpg</file>
     </qresource>
 </RCC>

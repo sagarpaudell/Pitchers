@@ -6,53 +6,769 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>787</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>AdminWin</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+  <property name="styleSheet">
+   <string notr="true">#AdminWin{background-image: url(:/img/adminbackground.jpg);}
+
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="CENTRAL">
+   <property name="styleSheet">
+    <string notr="true">#CENTRAL{background-image: url(:/img/adminbackground.jpg);}
+</string>
+   </property>
+   <widget class="QPushButton" name="logout_button">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>50</y>
-      <width>321</width>
-      <height>131</height>
+      <x>650</x>
+      <y>10</y>
+      <width>101</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; color:#ff5500;&quot;&gt;This is admin section.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>Log Out</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="addmovies_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Add Movies</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="userlist_button">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>10</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Registered Users</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="removemovies_button">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Remove Movies</string>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
-      <width>75</width>
-      <height>23</height>
+      <y>60</y>
+      <width>787</width>
+      <height>471</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#stackedWidget{background-image: url(:/img/adminbackground.jpg);}</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>681</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.05 rgba(14, 8, 73, 255), stop:0.36 rgba(28, 17, 145, 255), stop:0.6 rgba(126, 14, 81, 255), stop:0.75 rgba(234, 11, 11, 255), stop:0.79 rgba(244, 70, 5, 255), stop:0.86 rgba(255, 136, 0, 255), stop:0.935 rgba(239, 236, 55, 255));
+label_2{color: rgb(85, 0, 127);}</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Welcome To RECOMOVIES ADMIN Panel&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;You are logged in as admin.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="add_page_1">
+     <widget class="QLineEdit" name="genre">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>150</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="year_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="text">
+       <string>Year</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="cast">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>190</y>
+        <width>271</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="title">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>20</y>
+        <width>351</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>410</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Add Now</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="browse">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>410</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:10px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="synopsis_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="text">
+       <string>Synopsis</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="imdb_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="text">
+       <string>IMDb</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="year">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>60</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="genre_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+</string>
+      </property>
+      <property name="text">
+       <string>Genre</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="image">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>410</y>
+        <width>16</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="imdb">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>60</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cast_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>200</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+</string>
+      </property>
+      <property name="text">
+       <string>Cast</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="director">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>100</y>
+        <width>351</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>420</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:10px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Clear Selection</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="synopsis">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>310</y>
+        <width>271</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:white;
+color:black;
+border-radius:10;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="director_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="text">
+       <string>Director</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MV Boli</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:red;</string>
+      </property>
+      <property name="text">
+       <string>ADD MOVIES!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="image_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>410</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;</string>
+      </property>
+      <property name="text">
+       <string>Image</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="title_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+
+</string>
+      </property>
+      <property name="text">
+       <string>Title</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="piclabel">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>131</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>131</width>
+        <height>181</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>131</width>
+        <height>181</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="lineWidth">
+       <number>18</number>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="ruserlist_page_2">
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MV Boli</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:red;</string>
+      </property>
+      <property name="text">
+       <string>USER'S LIST:</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>731</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 85, 0);</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="removemovies_page_3">
+     <widget class="QLineEdit" name="rem_mov">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>100</y>
+        <width>471</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Search Movie to Remove</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removemovies_button_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>160</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Remove  Movie</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="removeuserpage_4">
+     <widget class="QLineEdit" name="rem_user">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>70</y>
+        <width>471</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+font: 10pt &quot;Century Gothic&quot;;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Search User to Remove</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeuser_button">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>130</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Remove User</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="remove_user_button">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>10</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	color: rgb(170, 0, 0);
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
+background:rgb(255, 0, 0);
+color:rgb(255, 255, 255);
+</string>
+    </property>
     <property name="text">
-     <string>Back</string>
+     <string>Remove Users</string>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>

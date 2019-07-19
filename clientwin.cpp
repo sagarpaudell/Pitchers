@@ -9,6 +9,8 @@
 #include <QVariant>
 #include <QSignalMapper>
 #include  <QLabel>
+#include <QDesktopServices>
+#include <QUrl>
 
 ClientWin::ClientWin(QWidget *parent,QString uname) :
     QMainWindow(parent),
@@ -370,17 +372,18 @@ void ClientWin::on_documentary_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 }
 void ClientWin::display_movie_details(const QString temp){
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("127.0.0.1");
-    db.setUserName("root");
-    db.setPassword("");
-    db.setDatabaseName("moviedataset");
-    if(db.open()){
-
+     ui->stackedWidget->setCurrentIndex(7);
+//    QSqlDatabase db;
+//    db = QSqlDatabase::addDatabase("QMYSQL");
+//    db.setHostName("127.0.0.1");
+//    db.setUserName("root");
+//    db.setPassword("");
+//    db.setDatabaseName("moviedataset");
+//    if(db.open()){
+    DbManager db1("moviedataset");
         //creating database queries
       QSqlQuery query;
-      query.prepare (QString( "SELECT * FROM imdb WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')) union (SELECT * FROM nepali WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))"));
+      query.prepare (QString( "SELECT * FROM imdb WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')) union (SELECT * FROM nepali WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union(SELECT * FROM hindi WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM kids WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM southindian WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))"));
       query.bindValue ( ":moviename",temp );
 
       //query.prepare(QString("SELECT * FROM drama WHERE  UPPER(REPLACE(moviename, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')) union (SELECT * FROM horror WHERE UPPER(REPLACE(moviename, ' ', '')) = UPPER(REPLACE(:moviename, ' ', ''))) union (SELECT * FROM romance WHERE UPPER(REPLACE(moviename, ' ', '')) = UPPER(REPLACE(:moviename, ' ', ''))) union (SELECT * FROM crime WHERE UPPER(REPLACE(moviename, ' ', '')) = UPPER(REPLACE(:moviename, ' ', ''))) "));
@@ -388,30 +391,41 @@ void ClientWin::display_movie_details(const QString temp){
 
 
       if(query.exec()){
-              qDebug() <<query.value(0)<<query.value(1)<<query.value(3)<<query.value(4)<<query.value(5)<<query.value(6);
-                     while (query.next()) {
+              //qDebug() <<query.value(0)<<query.value(1)<<query.value(3)<<query.value(4)<<query.value(5)<<query.value(6);
+                    while (query.next()) {
                          ui->movietitle->setText(query.value(1).toString());
                          ui->year->setText(query.value(2).toString());
-                         ui->IMDb->setText(query.value(4).toString());
                          ui->director->setText(query.value(3).toString());
+                         ui->IMDb->setText(query.value(4).toString());
                          ui->cast->setText(query.value(5).toString());
                          ui->synopsis->setText(query.value(6).toString());
                          ui->genre->setText(query.value(7).toString());
+
 
                          QPixmap outPixmap = QPixmap(); // Create QPixmap, which will be placed in picLabel
                              /* Taking the image data from the table as QByteArray and put them in QPixmap
                               * */
                              outPixmap.loadFromData( query.value(8).toByteArray());
                              ui->movie_poster->setPixmap(outPixmap.scaled(131,181));
-
-
-
+                             QString tlink=query.value(9).toString();
+                              QString mlink=query.value(10).toString();
+                                 qDebug()<<tlink;
+                         // on_trailer_button_clicked(tlink);
+                              QSignalMapper* m_sigmapper = new QSignalMapper(this);
+                             connect(ui->trailer_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
+                             m_sigmapper->setMapping(ui->trailer_button,tlink);
+                             connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(trailer(const QString)));
+                              QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                             connect(ui->movie_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                             m_sigmapper1->setMapping(ui->movie_button,mlink);
+                             connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(movie(const QString)));
 
 
 
                      }
        }
-      else{
+
+     else{
 //          QSqlQuery query1;
 //          query1.prepare(QString("SELECT * FROM horror WHERE moviename = :moviename"));
 //          query1.bindValue(":moviename",search_movie);
@@ -426,11 +440,11 @@ void ClientWin::display_movie_details(const QString temp){
 //                             ui->synopsis->setText(query1.value(5).toString());
 //                             //ui->IMDb->setText(query.value(3).toString());
 //                         }
-         qDebug() << query.lastError().text();
+         //qDebug() << query.lastError().text();
       }
-     db.close();
-    }
-    ui->stackedWidget->setCurrentIndex(7);
+
+
+
 
 }
 void ClientWin::on_commandLinkButton_clicked()
@@ -438,6 +452,14 @@ void ClientWin::on_commandLinkButton_clicked()
 
     QString search_movie = ui->search->text();
     display_movie_details(search_movie);
+}
+void ClientWin::trailer(QString tlink)
+{
+  qDebug()<<"QStr";   QDesktopServices::openUrl(QUrl(tlink));
+}
+void ClientWin::movie(QString mlink)
+{
+     QDesktopServices::openUrl(QUrl(mlink));
 }
 
 //void ClientWin :: setrecommendedMovies(QString( temp)){
@@ -760,9 +782,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                 m_sigmapper->setMapping(button,movienameString);
                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                 QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
                 connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                m_sigmapper->setMapping(moviename_button,movienameString);
-                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                m_sigmapper1->setMapping(moviename_button,movienameString);
+                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
                 vbox->addWidget(textt);
                 vbox->addWidget(button);
                 vbox->addWidget(moviename_button);
@@ -818,9 +841,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                         connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                         m_sigmapper->setMapping(button,movienameString);
                         connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                        m_sigmapper->setMapping(moviename_button,movienameString);
-                        connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                        QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                        m_sigmapper1->setMapping(moviename_button,movienameString);
+                        connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                         vbox->addWidget(textt);
                         vbox->addWidget(button);
@@ -877,9 +901,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                 m_sigmapper->setMapping(button,movienameString);
                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                m_sigmapper->setMapping(moviename_button,movienameString);
-                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                m_sigmapper1->setMapping(moviename_button,movienameString);
+                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                 vbox->addWidget(textt);
                 vbox->addWidget(button);
@@ -892,7 +917,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
    }//forloopclosed
        }//foragecheckclosed
             else{//elseforage
-                data = db1.getAllhindi();
+                data = db1.getAllanimated();
               int   index1 = data.length()-1;
                     for (int i = 0; i < 5; ++i) {
                         for (int k = 0; k < 1; ++k){
@@ -912,7 +937,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
                             button->setStyleSheet("border-radius:0px; background:white ;");
                             if(index1==data.length()-1){
-                                textt->setText("Some Bollywood ");
+                                textt->setText("Some animated  ");
                                 textt->setStyleSheet("border: none ;  background: black; color: white; font-size:18px;");
                             }
                             else if(index1==data.length()-2){
@@ -933,9 +958,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                             m_sigmapper->setMapping(button,movienameString);
                             connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                            m_sigmapper->setMapping(moviename_button,movienameString);
-                            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                            QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                            m_sigmapper1->setMapping(moviename_button,movienameString);
+                            connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                             vbox->addWidget(textt);
                             vbox->addWidget(button);
@@ -990,9 +1016,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                     connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                     m_sigmapper->setMapping(button,movienameString);
                     connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                    m_sigmapper->setMapping(moviename_button,movienameString);
-                    connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                    QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                    m_sigmapper1->setMapping(moviename_button,movienameString);
+                    connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                     vbox->addWidget(textt);
                     vbox->addWidget(button);
@@ -1042,9 +1069,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                         connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                         m_sigmapper->setMapping(button,movienameString);
                         connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                        m_sigmapper->setMapping(moviename_button,movienameString);
-                        connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                        QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                        m_sigmapper1->setMapping(moviename_button,movienameString);
+                        connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                         vbox->addWidget(textt);
                         vbox->addWidget(button);
@@ -1103,9 +1131,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                 m_sigmapper->setMapping(button,movienameString);
                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                m_sigmapper->setMapping(moviename_button,movienameString);
-                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                m_sigmapper1->setMapping(moviename_button,movienameString);
+                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
                 vbox->addWidget(textt);
                 vbox->addWidget(button);
                 vbox->addWidget(moviename_button);
@@ -1159,9 +1188,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                         connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                         m_sigmapper->setMapping(button,movienameString);
                         connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                        m_sigmapper->setMapping(moviename_button,movienameString);
-                        connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                        QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                        m_sigmapper1->setMapping(moviename_button,movienameString);
+                        connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                         vbox->addWidget(textt);
                         vbox->addWidget(button);
@@ -1218,9 +1248,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                 m_sigmapper->setMapping(button,movienameString);
                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                m_sigmapper->setMapping(moviename_button,movienameString);
-                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                m_sigmapper1->setMapping(moviename_button,movienameString);
+                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                 vbox->addWidget(textt);
                 vbox->addWidget(button);
@@ -1234,7 +1265,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
        }//agecheckclosed
      else//elseforage
    {
-        data = db1.getAllsouthindian();
+        data = db1.getAllanimated();
           int index1 = data.length()-1;
         for (int i = 0; i < 5; ++i) {
             for (int k = 0; k < 1; ++k){
@@ -1254,7 +1285,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
                 button->setStyleSheet("border-radius:0px; background:white ;");
                 if(index1==data.length()-1){
-                    textt->setText("Some South Indian ");
+                    textt->setText("Animated Choice ");
                     textt->setStyleSheet("border: none ;  background: black; color: white; font-size:18px;");
                 }
                 else if(index1==data.length()-2){
@@ -1275,9 +1306,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                 m_sigmapper->setMapping(button,movienameString);
                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                m_sigmapper->setMapping(moviename_button,movienameString);
-                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                m_sigmapper1->setMapping(moviename_button,movienameString);
+                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                 vbox->addWidget(textt);
                 vbox->addWidget(button);
@@ -1290,7 +1322,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
 
     }//forloopclosed
     }//elseforageclosed
-        data = db1.getAllmostrated();
+        data = db1.getAllsouthindian();
         int index1 = data.length()-1;
             for (int i = 0; i < 5; ++i) {
                 for (int k = 0; k < 1; ++k){
@@ -1310,7 +1342,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
                     moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
                     button->setStyleSheet("border-radius:0px; background:white ;");
                     if(index1==data.length()-1){
-                        textt->setText("People's Choice ");
+                        textt->setText("Some south Indian");
                         textt->setStyleSheet("border: none ;  background: black; color: white; font-size:18px;");
                     }
                     else textt->setText("");
@@ -1327,9 +1359,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                     connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                     m_sigmapper->setMapping(button,movienameString);
                     connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                    m_sigmapper->setMapping(moviename_button,movienameString);
-                    connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                    QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                    m_sigmapper1->setMapping(moviename_button,movienameString);
+                    connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                     vbox->addWidget(textt);
                     vbox->addWidget(button);
@@ -1379,9 +1412,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                         connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                         m_sigmapper->setMapping(button,movienameString);
                         connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                        m_sigmapper->setMapping(moviename_button,movienameString);
-                        connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                        QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                        connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                        m_sigmapper1->setMapping(moviename_button,movienameString);
+                        connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                         vbox->addWidget(textt);
                         vbox->addWidget(button);
@@ -1440,9 +1474,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                             m_sigmapper->setMapping(button,movienameString);
                             connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                            m_sigmapper->setMapping(moviename_button,movienameString);
-                            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                            QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                            m_sigmapper1->setMapping(moviename_button,movienameString);
+                            connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
                             vbox->addWidget(textt);
                             vbox->addWidget(button);
                             vbox->addWidget(moviename_button);
@@ -1496,9 +1531,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                                     connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                                     m_sigmapper->setMapping(button,movienameString);
                                     connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                                    m_sigmapper->setMapping(moviename_button,movienameString);
-                                    connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                                    QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                                    m_sigmapper1->setMapping(moviename_button,movienameString);
+                                    connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                                     vbox->addWidget(textt);
                                     vbox->addWidget(button);
@@ -1555,9 +1591,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                             m_sigmapper->setMapping(button,movienameString);
                             connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                            m_sigmapper->setMapping(moviename_button,movienameString);
-                            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                            QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                            m_sigmapper1->setMapping(moviename_button,movienameString);
+                            connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                             vbox->addWidget(textt);
                             vbox->addWidget(button);
@@ -1571,7 +1608,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
                    }//agecheckedpclosed
                     else//elseforage
                {
-                 data = db1.getAllcrime();
+                 data = db1.getAllanimated();
                 int index1 = data.length()-1;
                     for (int i = 0; i < 5; ++i) {
                         for (int k = 0; k < 1; ++k){
@@ -1591,7 +1628,7 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
                             button->setStyleSheet("border-radius:0px; background:white ;");
                             if(index1==data.length()-1){
-                                textt->setText("Let's Crime ");
+                                textt->setText("Let's animate ");
                                 textt->setStyleSheet("border: none ;  background: black; color: white; font-size:18px;");
                             }
                             else if(index1==data.length()-2){
@@ -1612,9 +1649,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                             connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                             m_sigmapper->setMapping(button,movienameString);
                             connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                            m_sigmapper->setMapping(moviename_button,movienameString);
-                            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                            QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                            connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                            m_sigmapper1->setMapping(moviename_button,movienameString);
+                            connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                             vbox->addWidget(textt);
                             vbox->addWidget(button);
@@ -1664,9 +1702,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                                 m_sigmapper->setMapping(button,movienameString);
                                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                                connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                                m_sigmapper->setMapping(moviename_button,movienameString);
-                                connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                                QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                                connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                                m_sigmapper1->setMapping(moviename_button,movienameString);
+                                connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                                 vbox->addWidget(textt);
                                 vbox->addWidget(button);
@@ -1720,9 +1759,10 @@ void ClientWin::setrecommendedMovies(const QString uname){
                                     connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
                                     m_sigmapper->setMapping(button,movienameString);
                                     connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-                                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-                                    m_sigmapper->setMapping(moviename_button,movienameString);
-                                    connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
+                                    QSignalMapper* m_sigmapper1 = new QSignalMapper(this);
+                                    connect(moviename_button, SIGNAL(clicked()), m_sigmapper1, SLOT(map()));
+                                    m_sigmapper1->setMapping(moviename_button,movienameString);
+                                    connect(m_sigmapper1, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
 
                                     vbox->addWidget(textt);
                                     vbox->addWidget(button);
@@ -1736,3 +1776,15 @@ void ClientWin::setrecommendedMovies(const QString uname){
                         }//forloopclosed
    }//elsefornationalityclosed
 }//blockclosed
+
+
+
+void ClientWin::on_trailer_button_clicked(QString tlink)
+{
+     QDesktopServices::openUrl(QUrl(tlink));
+}
+
+void ClientWin::on_movie_button_clicked(QString mlink)
+{
+
+}
