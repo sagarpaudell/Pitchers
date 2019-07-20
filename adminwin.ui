@@ -40,6 +40,9 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 	color: rgb(170, 0, 0);
@@ -67,6 +70,9 @@ color:rgb(255, 255, 255);
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -96,6 +102,9 @@ color:rgb(255, 255, 255);
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 	color: rgb(170, 0, 0);
@@ -124,6 +133,9 @@ color:rgb(255, 255, 255);
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 	color: rgb(170, 0, 0);
@@ -151,7 +163,7 @@ color:rgb(255, 255, 255);
      <string notr="true">#stackedWidget{background-image: url(:/img/adminbackground.jpg);}</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_2">
@@ -563,9 +575,7 @@ border-radius:10;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">
-
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Title</string>
@@ -675,6 +685,9 @@ font: 10pt &quot;Century Gothic&quot;;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">
 	color: rgb(170, 0, 0);
@@ -722,6 +735,9 @@ font: 10pt &quot;Century Gothic&quot;;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">
 	color: rgb(170, 0, 0);
@@ -751,6 +767,9 @@ color:rgb(255, 255, 255);
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">

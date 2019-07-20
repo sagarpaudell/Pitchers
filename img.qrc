@@ -36,5 +36,9 @@
         <file>img/imdblogo.png</file>
         <file>img/comingsoon.png</file>
         <file>img/adminbackground.jpg</file>
+        <file>img/jack.gif</file>
+        <file>img/welcome.gif</file>
+        <file>image/image_UHC_icon.ico</file>
+        <file>image/favicon.ico</file>
     </qresource>
 </RCC>

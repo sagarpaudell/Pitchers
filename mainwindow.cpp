@@ -22,7 +22,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-     hide();
+     close();
      regWin = new regwin(this);
      regWin->setFixedSize(763,424);
      regWin->show();
@@ -36,7 +36,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    hide();
+    close();
     loginWin = new loginwin(this);
     loginWin->setFixedSize(763,424);
     loginWin->show();

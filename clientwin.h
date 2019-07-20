@@ -3,11 +3,11 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
-#include "movie_details.h"
 #include  <QCompleter>
-
+class MainWindow;
 namespace Ui {
 class ClientWin;
+
 }
 
 class ClientWin : public QMainWindow
@@ -44,14 +44,16 @@ private slots:
 
     void on_commandLinkButton_clicked();
 
-    void on_trailer_button_clicked(const QString tlink);
+    void on_trailer_button_clicked();
 
-    void on_movie_button_clicked(const QString mlink);
+    void on_movie_button_clicked();
+
+    void on_backButton_clicked();
 
 private:
     Ui::ClientWin *ui;
-    Movie_Details *movie_details;
     QCompleter *moviename_completer;
+    MainWindow *mainWindow;
     QString uname;
 };
 class user{

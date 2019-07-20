@@ -11,7 +11,7 @@
 #include<QTextEdit>
 #include<QTableView>
 #include<QTableWidget>
-
+#include  <QCompleter>
 
 namespace Ui {
 class AdminWin;
@@ -60,6 +60,7 @@ private:
     Ui::AdminWin *ui;
     bool isEmpty(const QString& str)const;
     QSqlDatabase database;
+    QCompleter *moviename_completer;
 
 };
 

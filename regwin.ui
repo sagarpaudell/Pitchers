@@ -260,6 +260,9 @@ background:rgb(85, 0, 0)
             <pointsize>10</pointsize>
            </font>
           </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
           <property name="placeholderText">
            <string>Password</string>
           </property>
@@ -274,6 +277,9 @@ background:rgb(85, 0, 0)
           </property>
           <property name="styleSheet">
            <string notr="true">border-color: rgb(85, 0, 0);</string>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

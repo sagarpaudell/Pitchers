@@ -30,7 +30,6 @@ SOURCES += \
         loginwin.cpp \
         main.cpp \
         mainwindow.cpp \
-        movie_details.cpp \
         movie_manager.cpp \
         regwin.cpp
 
@@ -39,7 +38,6 @@ HEADERS += \
         clientwin.h \
         loginwin.h \
         mainwindow.h \
-        movie_details.h \
         movie_manager.h \
         regwin.h
 
@@ -48,7 +46,6 @@ FORMS += \
         clientwin.ui \
         loginwin.ui \
         mainwindow.ui \
-        movie_details.ui \
         regwin.ui
 
 # Default rules for deployment.

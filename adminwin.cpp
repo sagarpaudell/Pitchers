@@ -11,6 +11,12 @@ AdminWin::AdminWin(QWidget *parent) :
     ui->piclabel->setPixmap(pix);
     ui->stackedWidget->setCurrentIndex(0);
     ui->piclabel->setVisible(false);
+    QStringList competionlist;
+    DbManager db("moviedataset");
+    competionlist = db.getmoviesforsearch();
+    moviename_completer = new QCompleter(competionlist,this);
+    moviename_completer->setCaseSensitivity(Qt::CaseInsensitive);
+    ui->rem_mov->setCompleter(moviename_completer);
 }
 
 AdminWin::~AdminWin()

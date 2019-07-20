@@ -102,7 +102,7 @@ void regwin::on_loginButton_clicked()
     QString ID = ui->username->text();
     QString Pass = ui->password->text();
     if(ID=="RECOMOVIES" && Pass == "RECOMOVIES" ){
-           hide();
+           close();
            adminwin = new AdminWin(this);
            adminwin->show();}
     QSqlDatabase db;
@@ -129,7 +129,7 @@ void regwin::on_loginButton_clicked()
                          QString passwordfromDB = query.value(6).toString();
                              if(usernamefromDB == ID && passwordfromDB == Pass){
                                  QMessageBox::information(this,"Success","Login success");
-                                 hide();
+                                 close();
                                  clientwin = new ClientWin(this);
                                  clientwin->show();
                               }
@@ -145,11 +145,11 @@ void regwin::on_loginButton_clicked()
 
 
     if(ID=="RECOMOVIES" && Pass == "RECOMOVIES" ){
-        hide();
+        close();
         adminwin = new AdminWin(this);
         adminwin->show();}
     else if(ID=="user" && Pass == "user" ){
-                hide();
+                close();
                 clientwin = new ClientWin(this);
                 clientwin->show();
 }
@@ -158,7 +158,7 @@ void regwin::on_loginButton_clicked()
 
 void regwin::on_backButton_clicked()
 {
-    hide();
+    close();
     mainWindow = new MainWindow(this);
     mainWindow->setFixedSize(763,424);
     mainWindow->show();

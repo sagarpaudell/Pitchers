@@ -251,7 +251,7 @@ QList<QList<QVariant>> DbManager::getAlldocumentary(){
     return data;
 }
 QStringList DbManager::getmoviesforsearch(){
-    QSqlQuery query("SELECT title FROM imdb union (SELECT title FROM nepali )union(SELECT title FROM hindi)union (SELECT title FROM kids )union (SELECT title FROM southindian )");
+    QSqlQuery query("SELECT title FROM imdb ");
     int movieNameIndex = query.record().indexOf("title");
     QStringList list;
     while (query.next()){
@@ -259,6 +259,35 @@ QStringList DbManager::getmoviesforsearch(){
         QString movieName = query.value(movieNameIndex).toString();
         list.push_front(movieName);
     }
+    qDebug()<<list.length();
+    QSqlQuery query1("SELECT title FROM nepali ");
+  //  int movieNameIndex = query.record().indexOf("title");
+   // QStringList list;
+    while (query1.next()){
+
+        QString movieName = query1.value(movieNameIndex).toString();
+        list.push_front(movieName);
+    }
+    qDebug()<<list.length();
+    QSqlQuery query2("SELECT title FROM hindi ");
+    while (query2.next()){
+
+        QString movieName = query2.value(movieNameIndex).toString();
+        list.push_front(movieName);
+    }
+    QSqlQuery query3("SELECT title FROM southindian ");
+    while (query3.next()){
+
+        QString movieName = query3.value(movieNameIndex).toString();
+        list.push_front(movieName);
+    }
+    QSqlQuery query4("SELECT title FROM kids ");
+    while (query4.next()){
+
+        QString movieName = query4.value(movieNameIndex).toString();
+        list.push_front(movieName);
+    }
+
     return list;
 }
 //QList<QVariant> DbManager::display_search_details(const QString temp){
