@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>RECOMOVIES</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/img/welcome.gif</normaloff>:/img/welcome.gif</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#MainWindow{
@@ -188,6 +192,8 @@ border:none;
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
  <connections/>
 </ui>

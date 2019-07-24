@@ -20,7 +20,6 @@ regwin::~regwin()
 {
     delete ui;
 }
-
 void regwin::on_signin_clicked()
 {
     close();
@@ -79,7 +78,7 @@ void regwin::on_joinButton_clicked()
             query.bindValue(":Nationality",nationality);
             query.bindValue(":Age",age);
             if(query.exec()){
-                QMessageBox::information(this,"Congratulations","Resgitration Successful");
+                QMessageBox::information(this,"Congratulations","Registration Successful");
             }
             else {
                  QMessageBox::information(this,"oops!","values insertion failed");

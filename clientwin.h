@@ -21,8 +21,7 @@ public:
 
 private slots:
     void display_movie_details(const QString temp);
-    void trailer(const QString tlink);
-    void movie(const QString mlink);
+
     void setrecommendedMovies(const QString uname);
     void setmostratedMovies();
     void setdramaMovies();
@@ -60,5 +59,6 @@ class user{
     public:
 
 };
-
+ void  trailer(const QString tlink);
+ void  movie(const QString mlink);
 #endif // CLIENTWIN_H

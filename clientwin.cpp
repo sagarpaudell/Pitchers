@@ -41,26 +41,6 @@ ClientWin::~ClientWin()
     delete ui;
 }
 
-//void ClientWin::on_pushButton_clicked()
-//{
-
-//    close();
-//    /*loginwin *loginWin;
-//    loginWin = new loginwin(this);
-//    loginWin->setFixedSize(763,424);
-//    loginWin->show();*/
-//    MainWindow *mainwindow;
-//    mainwindow = new MainWindow(this);
-//    mainwindow->setFixedSize(763,424);
-//    mainwindow->show();
-
-//}
-
-
-
-
-
-
 void ClientWin::on_home_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
@@ -378,259 +358,6 @@ void ClientWin::on_documentary_clicked()
 }
 
 
-//void ClientWin :: setrecommendedMovies(QString( temp)){
-
-
-
-//    DbManager db("moviedataset");
-//    QString nationality;
-//    nationality=ui->search->text();
-//    if(nationality=="nepali"){
-//    QList<QList<QVariant>>data = db.getAllnepali();
-//    qDebug()<<"Lenght: "<<data.length();
-//    QGridLayout *layout = new QGridLayout;
-
-//    int index = data.length()-  1;
-//    for (int i = 0; i < 5; ++i) {
-//        for (int k = 0; k < 1; ++k){
-
-
-//            QList<QVariant> temp1 = data[index];
-//            QVBoxLayout* vbox = new QVBoxLayout();
-//            //QGridLayout* gbox = new QGridLayout()
-//            QPushButton* moviename_button = new QPushButton();
-//            QLabel* blank = new QLabel();
-//            QPushButton* button = new QPushButton();
-
-//           // QList<QString> itemname;
-//            // Note: 0->itemName 1->itemCost
-//            QVariant movietitle = temp1[0];
-//            QString movienameString = movietitle.toString();
-//            moviename_button->setText(movienameString);
-//            blank->setText("");
-//            button->setFixedSize(135,185);
-//            moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
-//            button->setStyleSheet("border-radius:0px; background:white ;");
-
-//            moviename_button->setFixedSize(131,25);
-//            QVariant image = temp1[6];
-//            QPixmap outPixmap = QPixmap(); // Create QPixmap, which will be placed in
-//            outPixmap = image.value<QPixmap>();
-//            QPixmap pixmap(outPixmap);
-//            QIcon ButtonIcon(pixmap);
-//            const QSize BUTTON_SIZE = QSize(131, 181);
-//            button->setIcon(ButtonIcon);
-//            button->setIconSize((BUTTON_SIZE));
-//            //addButton->setFixedSize(pixmap.rect().size());
-//           // QString imgAd = itemData[1];
-//            //button->setStyleSheet("width:131px;height:181px;color: rgb(255, 255, 255);");
-//            QSignalMapper* m_sigmapper = new QSignalMapper(this);
-//            connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//            m_sigmapper->setMapping(button,movienameString);
-//            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-//            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//            m_sigmapper->setMapping(moviename_button,movienameString);
-//            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-
-//            vbox->addWidget(button);
-//            vbox->addWidget(moviename_button);
-//            vbox->addWidget(blank);
-//            layout->addLayout(vbox,k,i);
-//            ui->recommended_for_you->setLayout(layout);
-//            index--;
-
-
-//}
-//    }
-
-
-//    }
-//    else if(nationality=="indian") {
-//         QList<QList<QVariant>>data = db.getAllhindi();
-
-//         qDebug()<<"Lenght: "<<data.length();
-//         QGridLayout *layout = new QGridLayout;
-
-//         int index = data.length()-  1;
-//         for (int i = 0; i < 5; ++i) {
-//             for (int k = 0; k < 2; ++k){
-
-
-//                 QList<QVariant> temp1 = data[index];
-//                 QVBoxLayout* vbox = new QVBoxLayout();
-//                 //QGridLayout* gbox = new QGridLayout()
-//                 QPushButton* moviename_button = new QPushButton();
-//                 QLabel* blank = new QLabel();
-//                 QPushButton* button = new QPushButton();
-
-//                // QList<QString> itemname;
-//                 // Note: 0->itemName 1->itemCost
-//                 QVariant movietitle = temp1[0];
-//                 QString movienameString = movietitle.toString();
-//                 moviename_button->setText(movienameString);
-//                 blank->setText("");
-//                 button->setFixedSize(135,185);
-//                 moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
-//                 button->setStyleSheet("border-radius:0px; background:white ;");
-
-//                 moviename_button->setFixedSize(131,25);
-//                 QVariant image = temp1[6];
-//                 QPixmap outPixmap = QPixmap(); // Create QPixmap, which will be placed in
-//                 outPixmap = image.value<QPixmap>();
-//                 QPixmap pixmap(outPixmap);
-//                 QIcon ButtonIcon(pixmap);
-//                 const QSize BUTTON_SIZE = QSize(131, 181);
-//                 button->setIcon(ButtonIcon);
-//                 button->setIconSize((BUTTON_SIZE));
-//                 //addButton->setFixedSize(pixmap.rect().size());
-//                // QString imgAd = itemData[1];
-//                 //button->setStyleSheet("width:131px;height:181px;color: rgb(255, 255, 255);");
-//                 QSignalMapper* m_sigmapper = new QSignalMapper(this);
-//                 connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//                 m_sigmapper->setMapping(button,movienameString);
-//                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-//                 connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//                 m_sigmapper->setMapping(moviename_button,movienameString);
-//                 connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-
-//                 vbox->addWidget(button);
-//                 vbox->addWidget(moviename_button);
-//                 vbox->addWidget(blank);
-//                 layout->addLayout(vbox,k,i);
-//                 ui->recommended_for_you->setLayout(layout);
-//                 index--;
-
-
-//     }
-
-
-
-//    }
-//    }
-//else{
-//    QList<QList<QVariant>>data = db.getAllmostrated();
-//    qDebug()<<"Lenght: "<<data.length();
-//    QGridLayout *layout = new QGridLayout;
-
-//    int index = data.length()-  1;
-//    for (int i = 0; i < 5; ++i) {
-//        for (int k = 0; k < 2; ++k){
-
-
-//            QList<QVariant> temp1 = data[index];
-//            QVBoxLayout* vbox = new QVBoxLayout();
-//            //QGridLayout* gbox = new QGridLayout()
-//            QPushButton* moviename_button = new QPushButton();
-//            QLabel* blank = new QLabel();
-//            QPushButton* button = new QPushButton();
-
-//           // QList<QString> itemname;
-//            // Note: 0->itemName 1->itemCost
-//            QVariant movietitle = temp1[0];
-//            QString movienameString = movietitle.toString();
-//            moviename_button->setText(movienameString);
-//            blank->setText("");
-//            button->setFixedSize(135,185);
-//            moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
-//            button->setStyleSheet("border-radius:0px; background:white ;");
-
-//            moviename_button->setFixedSize(131,25);
-//            QVariant image = temp1[6];
-//            QPixmap outPixmap = QPixmap(); // Create QPixmap, which will be placed in
-//            outPixmap = image.value<QPixmap>();
-//            QPixmap pixmap(outPixmap);
-//            QIcon ButtonIcon(pixmap);
-//            const QSize BUTTON_SIZE = QSize(131, 181);
-//            button->setIcon(ButtonIcon);
-//            button->setIconSize((BUTTON_SIZE));
-//            //addButton->setFixedSize(pixmap.rect().size());
-//           // QString imgAd = itemData[1];
-//            //button->setStyleSheet("width:131px;height:181px;color: rgb(255, 255, 255);");
-//            QSignalMapper* m_sigmapper = new QSignalMapper(this);
-//            connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//            m_sigmapper->setMapping(button,movienameString);
-//            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-//            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//            m_sigmapper->setMapping(moviename_button,movienameString);
-//            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-
-//            vbox->addWidget(button);
-//            vbox->addWidget(moviename_button);
-//            vbox->addWidget(blank);
-//            layout->addLayout(vbox,k,i);
-//            ui->recommended_for_you->setLayout(layout);
-//            index--;
-
-
-//}
-//    }
-//}
-//}
-//void ClientWin :: setrecommendedMovies(QString temp){
-//    DbManager db("moviedataset");
-//   //    QString nationality;
-//   //    nationality=ui->search->text();
-//   //    if(nationality=="nepali"){
-//      QList<QList<QVariant>>data = db.getAllnepali();
-//       qDebug()<<"Lenght: "<<data.length();
-//       QGridLayout *layout = new QGridLayout;
-
-//       int index = data.length()-  1;
-//       for (int i = 0; i < 5; ++i) {
-//           for (int k = 0; k < 2; ++k){
-
-
-//               QList<QVariant> temp1 = data[index];
-//               QVBoxLayout* vbox = new QVBoxLayout();
-//   //            //QGridLayout* gbox = new QGridLayout()
-//               QPushButton* moviename_button = new QPushButton();
-//               QLabel* blank = new QLabel();
-//               QPushButton* button = new QPushButton();
-
-//              // QList<QString> itemname;
-//               // Note: 0->itemName 1->itemCost
-//               QVariant movietitle = temp1[0];
-//               QString movienameString = movietitle.toString();
-//               moviename_button->setText(movienameString);
-//               blank->setText("");
-//               button->setFixedSize(135,185);
-//               moviename_button->setStyleSheet("border: none ;  background: black; color: white; font-size:14px; text-decoration: underline;");
-//               button->setStyleSheet("border-radius:0px; background:white ;");
-
-//               moviename_button->setFixedSize(131,25);
-//               QVariant image = temp1[6];
-//               QPixmap outPixmap = QPixmap(); // Create QPixmap, which will be placed in
-//               outPixmap = image.value<QPixmap>();
-//               QPixmap pixmap(outPixmap);
-//               QIcon ButtonIcon(pixmap);
-//               const QSize BUTTON_SIZE = QSize(131, 181);
-//               button->setIcon(ButtonIcon);
-//               button->setIconSize((BUTTON_SIZE));
-//   //            //addButton->setFixedSize(pixmap.rect().size());
-//   //           // QString imgAd = itemData[1];
-//   //            //button->setStyleSheet("width:131px;height:181px;color: rgb(255, 255, 255);");
-//   //            QSignalMapper* m_sigmapper = new QSignalMapper(this);
-//   //            connect(button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//   //            m_sigmapper->setMapping(button,movienameString);
-//   //            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-//   //            connect(moviename_button, SIGNAL(clicked()), m_sigmapper, SLOT(map()));
-//   //            m_sigmapper->setMapping(moviename_button,movienameString);
-//   //            connect(m_sigmapper, SIGNAL(mapped(QString)),this, SLOT(display_movie_details(const QString)));
-
-//               vbox->addWidget(button);
-//               vbox->addWidget(moviename_button);
-//               vbox->addWidget(blank);
-//               layout->addLayout(vbox,k,i);
-//               ui->parentScroll->setLayout(layout);
-//               index--;
-
-
-//   }
-//  }
-
-
-//   //    }
-//}
 void ClientWin::setrecommendedMovies(const QString uname){
 
     DbManager db("registration");
@@ -638,20 +365,9 @@ void ClientWin::setrecommendedMovies(const QString uname){
     QList<QString>data = db.getUserInfo(uname);
 
     QString nationality = data[5].toLower();
-//    QString uFname = data[1];
-//    QString uLname = data[2];
-//    QString uAddr = data[3];
-      int age = data[6].toInt();
-
-
-
-//    QSqlQuery query("SELECT * FROM user WHERE username = (:uname)");
-//    query.bindValue(":uname",uname);
-//    int nationalityIndex = query.record().indexOf("nationality");
-//    QString nationality = query.value(nationalityIndex).toString();
+    int age = data[6].toInt();
     qDebug()<<nationality;
     DbManager db1("moviedataset");
-//    QString nationality = "nepali";
     if(nationality=="nepali"){//checknationality
         QList<QList<QVariant>>data = db1.getAllnepali();
         qDebug()<<"Lenght: "<<data.length();
@@ -1727,14 +1443,18 @@ void ClientWin::on_backButton_clicked()
     QWidget *parent = this->parentWidget();
     parent->show();
 }
+ QString tlink;
+ QString mlink;
 void ClientWin::display_movie_details(const QString temp){
      ui->stackedWidget->setCurrentIndex(7);
+
     DbManager db1("moviedataset");
       QSqlQuery query;
+
+
       query.prepare (QString( "SELECT * FROM imdb WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')) union (SELECT * FROM nepali WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union(SELECT * FROM hindi WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM kids WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM southindian WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM crime WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM drama WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM romance WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM action WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM history WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))union (SELECT * FROM documentary WHERE UPPER(REPLACE(title, ' ', '')) = UPPER(REPLACE(:moviename, ' ', '')))"));
       query.bindValue ( ":moviename",temp );
-      QString tlink;
-      QString mlink;
+
 
       if(query.exec()){
               //qDebug() <<query.value(0)<<query.value(1)<<query.value(3)<<query.value(4)<<query.value(5)<<query.value(6);
@@ -1755,21 +1475,23 @@ void ClientWin::display_movie_details(const QString temp){
                          ui->movie_poster->setPixmap(outPixmap.scaled(131,181));
                          tlink=query.value(9).toString();
                          mlink=query.value(10).toString();
+                           qDebug()<<tlink<<query.lastError();
+
+
                      }
-                    qDebug()<<tlink;
+
 
        }
-      QSignalMapper* m_sigmapperq = new QSignalMapper(this);
-     connect(ui->trailer_button, SIGNAL(clicked()), m_sigmapperq, SLOT(map()));
-     m_sigmapperq->setMapping(ui->trailer_button,tlink);
-     connect(m_sigmapperq, SIGNAL(mapped(QString)),this, SLOT(trailer(const QString)));
-      QSignalMapper* m_sigmapperr = new QSignalMapper(this);
-     connect(ui->movie_button, SIGNAL(clicked()), m_sigmapperr, SLOT(map()));
-     m_sigmapperr->setMapping(ui->movie_button,mlink);
-     connect(m_sigmapperr, SIGNAL(mapped(QString)),this, SLOT(movie(const QString)));
 
+}
+void  trailer( QString tlink){
+    qDebug()<<"1";
+    QDesktopServices::openUrl(QUrl(tlink));
 
-
+}
+void movie( QString mlink){
+    qDebug()<<"1";
+    QDesktopServices::openUrl(QUrl(mlink));
 
 }
 void ClientWin::on_commandLinkButton_clicked()
@@ -1779,14 +1501,14 @@ void ClientWin::on_commandLinkButton_clicked()
     display_movie_details(search_movie);
 
 }
-void ClientWin::trailer(QString tlink)
+
+void ClientWin::on_trailer_button_clicked( )
 {
-
-  QDesktopServices::openUrl(QUrl(tlink));
-
-
+    trailer(tlink);
+    qDebug()<<tlink;
 }
-void ClientWin::movie(QString mlink)
+
+void ClientWin::on_movie_button_clicked()
 {
-     QDesktopServices::openUrl(QUrl(mlink));
+    movie(mlink);
 }
